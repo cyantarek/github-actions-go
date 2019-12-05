@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    tags: []
-  pull_request:
 
 jobs:
   lint:
@@ -16,7 +14,7 @@ jobs:
         go: [1.12]
     container: golang:${{ matrix.go }}-stretch
     steps:
-      uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Install Golint
         run: go get -u golang.org/x/lint/golint
       - name: Run Lint
