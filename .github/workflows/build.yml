@@ -18,4 +18,5 @@ jobs:
       - name: Install Golint
         run: go get -u golang.org/x/lint/golint
       - name: Run Lint
-        run: golint -set_exit_status $(go list github.com/cyantarek/github-actions-go/... | grep -v /vendor/)
+#        run: golint -set_exit_status $(go list github.com/cyantarek/github-actions-go/... | grep -v /vendor/)
+        run: golint -set_exit_status ./...
